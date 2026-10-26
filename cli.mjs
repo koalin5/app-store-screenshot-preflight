@@ -4,8 +4,10 @@ import { basename, dirname, join, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 
 // Source: https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications/
-// Checked 2026-10-23. This covers current iPhone and iPad display classes, not every legacy size or platform.
+// Checked 2026-10-26. This covers current iPhone and iPad display classes, not every legacy size or platform.
 export const SIZES = [
+  ['iPhone Duo outer display', [[1398, 2034]]],
+  ['iPhone Duo inner display', [[2007, 2853]]],
   ['iPhone Dynamic Island, large', [[1260, 2736], [1290, 2796], [1320, 2868]]],
   ['iPhone Face ID, large', [[1284, 2778], [1242, 2688]]],
   ['iPhone Dynamic Island, medium', [[1179, 2556], [1206, 2622]]],

@@ -1,6 +1,6 @@
 # App Store screenshot preflight
 
-A small, dependency-free Node.js check for iOS and iPadOS screenshot sets. Run it on your own files before opening App Store Connect or add it to CI. It checks PNG/JPEG headers, pixel dimensions for current iPhone and iPad display classes, PNG alpha/transparency, and Apple's limit of ten screenshots per device size. Files stay on your machine.
+A small, dependency-free Node.js check for iOS and iPadOS screenshot sets. Run it on your own files before opening App Store Connect or add it to CI. It checks PNG/JPEG headers, pixel dimensions for current iPhone and iPad display classes including both iPhone Duo displays, PNG alpha/transparency, and Apple's limit of ten screenshots per device size. Files stay on your machine.
 
 ## Run it in GitHub Actions
 
@@ -37,9 +37,9 @@ Pass each language folder separately. Only image files immediately inside each f
 
 Copy `cli.mjs` into `tools/app-store-screenshot-preflight/` in your own repository for that example. The script uses no packages or network calls.
 
-The check covers current iPhone and iPad display classes, including portrait and rotated landscape dimensions. It does not cover every historical device, Mac, Apple TV, Vision Pro, iPhone Duo, screenshot content, file decoding or App Review policy. A pass is a preflight signal, not an acceptance guarantee. For a visual file-by-file check that also suggests a matching export size, use [StoreStudio's free browser validator](https://storestudio.app/tools/screenshot-size-validator/?utm_source=github&utm_medium=referral&utm_campaign=screenshot_preflight). If you still need to create the set, [open StoreStudio's free editor](https://app.storestudio.app/?template=starter&utm_source=github&utm_medium=referral&utm_campaign=screenshot_preflight#studio).
+The check covers current iPhone and iPad display classes, including portrait and rotated landscape dimensions. Apple's specifications say iPhone Duo screenshots become required in April 2027 for apps using the iOS 27.1 SDK or later. This checker does not cover every historical device, Mac, Apple TV, Vision Pro, screenshot content, file decoding or App Review policy. A pass is a preflight signal, not an acceptance guarantee. For a visual file-by-file check and an upload-well plan, use [StoreStudio's free browser checker](https://storestudio.app/tools/screenshot-size-validator/?utm_source=github&utm_medium=referral&utm_campaign=screenshot_preflight). If you still need to create a supported iPhone or iPad set, [open StoreStudio's free editor](https://app.storestudio.app/?template=starter&utm_source=github&utm_medium=referral&utm_campaign=screenshot_preflight#studio). StoreStudio's editor does not export iPhone Duo sizes.
 
-Source: [Apple's screenshot specifications](https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications/), checked October 23, 2026. Review the current App Store Connect wells for your app before uploading.
+Source: [Apple's screenshot specifications](https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications/), checked October 26, 2026. Review the current App Store Connect wells for your app before uploading.
 
 ## Develop
 

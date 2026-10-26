@@ -40,6 +40,8 @@ function jpeg(width, height) {
 test('recognizes accepted portrait and landscape sizes and rejects an unlisted size', () => {
   assert.equal(sizeClass(1206, 2622), 'iPhone Dynamic Island, medium')
   assert.equal(sizeClass(2622, 1206), 'iPhone Dynamic Island, medium')
+  assert.equal(sizeClass(1398, 2034), 'iPhone Duo outer display')
+  assert.equal(sizeClass(2853, 2007), 'iPhone Duo inner display')
   assert.equal(sizeClass(1000, 1000), null)
 })
 
